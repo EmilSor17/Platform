@@ -1,8 +1,7 @@
-﻿namespace Platform.Core.Entities
+﻿namespace Platform.Core.Entities;
+
+public abstract class BaseEntity
 {
-  public abstract class BaseEntity
-  {
-    public int Id { get; set; }
-    public bool Status { get; set; }
-  }
+  public int Id { get; set; }
+  public bool Status { get; set; }
 }

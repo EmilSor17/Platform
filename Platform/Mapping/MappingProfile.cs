@@ -2,16 +2,15 @@
 using Platform.Api.DTOs;
 using Platform.Core.Entities;
 
-namespace Platform.Api.Mapping
+namespace Platform.Api.Mapping;
+
+public class MappingProfile : Profile
 {
-  public class MappingProfile : Profile
+  public MappingProfile()
   {
-    public MappingProfile()
-    {
-      CreateMap<WalletDto, Wallet>()
-          .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => DateTime.UtcNow))
-          .ForMember(dest => dest.Status, opt => opt.MapFrom(src => true))
-          .ForMember(dest => dest.Movements, opt => opt.MapFrom(src => new List<Movement>()));
-    }
+    CreateMap<WalletDto, Wallet>()
+        .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => DateTime.UtcNow))
+        .ForMember(dest => dest.Status, opt => opt.MapFrom(src => true))
+        .ForMember(dest => dest.Movements, opt => opt.MapFrom(src => new List<Movement>()));
   }
 }
